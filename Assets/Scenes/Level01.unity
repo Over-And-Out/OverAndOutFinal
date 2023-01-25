@@ -4045,6 +4045,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 386469244791406319, guid: b821505031a6521468bfdce185065b4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 386469244791406320, guid: b821505031a6521468bfdce185065b4e, type: 3}
       propertyPath: radius
       value: 15
@@ -8043,6 +8047,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 250403217393952925, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bded00981e95504a8e47f996835ca9a, type: 2}
     - target: {fileID: 253611037216033417, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
       propertyPath: m_Name
       value: WalkieTalkie
@@ -8091,6 +8099,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -2.214
       objectReference: {fileID: 0}
+    - target: {fileID: 2114444906184152322, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b27e27ec9046974eb4343bba2969707, type: 2}
+    - target: {fileID: 2114444906184152322, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72af2f614466478d9d8d8d7593b95, type: 2}
+    - target: {fileID: 3310764426632221810, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_Range
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434669832047744826, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: monstruo
+      value: 
+      objectReference: {fileID: 1877056208}
+    - target: {fileID: 6770256684855495631, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_Range
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770256684855495631, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_Intensity
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6770256684855495631, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7766751550911066307, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
       propertyPath: Ring
       value: 
@@ -8107,6 +8143,10 @@ PrefabInstance:
       propertyPath: WalkieCanvas
       value: 
       objectReference: {fileID: 2081922743}
+    - target: {fileID: 8821912475138820263, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65d72af2f614466478d9d8d8d7593b95, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b4b8235feb71d43bcddb4c0ffc5793, type: 3}
 --- !u!224 &1617346912 stripped
@@ -9865,6 +9905,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1877056208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877056186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb78281150f5224a848bd434356402e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1879751630
 GameObject:
   m_ObjectHideFlags: 0
