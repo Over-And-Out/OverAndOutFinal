@@ -93,9 +93,10 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));
 
-        if(Input.GetButtonDown("Switch Object"))
+        
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
-            SwitchObject();
+            SwitchObject(Input.GetAxis("Mouse ScrollWheel"));
         }
 
         //Movimiento de la camara (Bobbing)
@@ -104,18 +105,32 @@ public class PlayerController : MonoBehaviour
     }
 
     //Cambiar de objeto
-    public void SwitchObject() 
+    public void SwitchObject(float valor) 
     {
         activeObjeto.gameObject.SetActive(false);
 
-        currentObject++;
+        if(valor > 0) {
+            currentObject++;
 
-        if(currentObject >= allObjects.Count)
+            if (currentObject >= allObjects.Count)
+            {
+                currentObject = 0;
+            }
+
+            activeObjeto = allObjects[currentObject];
+            activeObjeto.gameObject.SetActive(true);
+        }else
         {
-            currentObject = 0;
-        }
+            currentObject--;
 
-        activeObjeto = allObjects[currentObject];
-        activeObjeto.gameObject.SetActive(true);
+            if (currentObject < 0)
+            {
+                currentObject = allObjects.Count;
+            }
+
+            activeObjeto = allObjects[currentObject];
+            activeObjeto.gameObject.SetActive(true);
+        }
+        
     }
 }

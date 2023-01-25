@@ -226,33 +226,9 @@ public class FirtsPersonController : MonoBehaviour
 
     private void HandleSwitchObject()
     {
-        if (Input.GetKeyDown(switchObjectKey))
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
-            if (activeObjeto)
-            {
-                activeObjeto.gameObject.SetActive(false);
-            }
-
-            if (allObjects.Count == 0)
-            {
-                currentObject = -1;
-                activeObjeto = null;
-            }
-            else
-            {
-                currentObject++;
-
-                if (currentObject >= allObjects.Count)
-                {
-                    currentObject = -1;
-                    activeObjeto = null;
-                } else
-                {
-                    activeObjeto = allObjects[currentObject];
-                    activeObjeto.gameObject.SetActive(true);
-                }
-
-            }
+            SwitchObject(Input.GetAxis("Mouse ScrollWheel"));
         }
     }
 
@@ -462,20 +438,35 @@ public class FirtsPersonController : MonoBehaviour
         regeneratingHealth = null; // Elimina referencia de la corrutina al terminar
     }
 
-    //Cambiar de objeto en la mano (por defecto con TAB)
-    public void SwitchObject() 
+    public void SwitchObject(float valor)
     {
         activeObjeto.gameObject.SetActive(false);
 
-        currentObject++;
-
-        if(currentObject >= allObjects.Count)
+        if (valor > 0)
         {
-            currentObject = 0;
+            currentObject++;
+
+            if (currentObject >= allObjects.Count)
+            {
+                currentObject = 0;
+            }
+
+            activeObjeto = allObjects[currentObject];
+            activeObjeto.gameObject.SetActive(true);
+        }
+        else
+        {
+            currentObject--;
+
+            if (currentObject < 0)
+            {
+                currentObject = allObjects.Count-1;
+            }
+
+            activeObjeto = allObjects[currentObject];
+            activeObjeto.gameObject.SetActive(true);
         }
 
-        activeObjeto = allObjects[currentObject];
-        activeObjeto.gameObject.SetActive(true);
     }
 
 
