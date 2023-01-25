@@ -42,6 +42,14 @@ namespace Assets.Scripts.Interactables
                     hit.transform.GetComponent<Interactable2>().Interact();
                 }
             }
+            else if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rango, LayerMask.GetMask("Telefono")))
+            {
+                InteractionText.instance.interText.text = "Presiona E para interactuar";
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.transform.GetComponent<Interactable2>().Interact();
+                }
+            }
             else
             {
                 InteractionText.instance.interText.text = "";
