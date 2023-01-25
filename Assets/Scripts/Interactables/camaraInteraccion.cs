@@ -24,10 +24,9 @@ namespace Assets.Scripts.Interactables
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rango, LayerMask.GetMask("Interact")))
             {
-                InteractionText.instance.interText.text = "Presiona E para recoger";
+                InteractionText.instance.interText.text = "Presiona E para interactuar";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //UnityEngine.Debug.Log("Hola");
                     linterna.GetComponent<InteractableLantern>().cantBateria += bateria;
                     hit.transform.GetComponent<Interactable2>().Interact();
 
@@ -37,7 +36,7 @@ namespace Assets.Scripts.Interactables
             }
             else if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, rango, LayerMask.GetMask("PanelLuz")))
             {
-                InteractionText.instance.interText.text = "Presiona Click Izq para interactuar";
+                InteractionText.instance.interText.text = "Presiona E para interactuar";
                 if (Input.GetMouseButtonDown(0))
                 {
                     hit.transform.GetComponent<Interactable2>().Interact();
