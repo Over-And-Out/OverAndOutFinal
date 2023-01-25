@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class InteractableWalkie : Interactable
 {
+    public activarMonstruo monstruo;
+    public encenderLuces luces;
     public override void OnFocus()
     {
         print("Focus on " + gameObject.name);
@@ -22,6 +24,8 @@ public class InteractableWalkie : Interactable
             walkie.SetActive(false);
 
             Destroy(this.gameObject);
+            monstruo.gameObject.SetActive(true);
+            luces.gameObject.SetActive(false);
             allPlayerObjects.Add(itemToAdd);
         }
     }
