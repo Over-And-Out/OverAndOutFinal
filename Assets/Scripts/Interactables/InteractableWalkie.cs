@@ -6,6 +6,11 @@ public class InteractableWalkie : Interactable
 {
     public activarMonstruo monstruo;
     public encenderLuces luces;
+    [SerializeField] private AudioSource playerAudioSource = default;
+    public AudioSource PlayerAudioSource { get => playerAudioSource; }
+     [SerializeField] private AudioClip sonido = default;
+    public AudioClip sonidoIni { get => sonido; }
+
     public override void OnFocus()
     {
         print("Focus on " + gameObject.name);
@@ -24,6 +29,7 @@ public class InteractableWalkie : Interactable
             walkie.SetActive(false);
 
             Destroy(this.gameObject);
+            PlayerAudioSource.PlayOneShot(sonido);
             monstruo.gameObject.SetActive(true);
             luces.gameObject.SetActive(false);
             allPlayerObjects.Add(itemToAdd);
