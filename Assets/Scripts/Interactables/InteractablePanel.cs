@@ -5,12 +5,13 @@ using UnityEngine;
 public class InteractablePanel : Interactable
 {
     public objetivoCanvas objetivo;
+    public activarTelefono telefono;
 
     [SerializeField]private encenderLuces luces;
     [SerializeField] private AudioSource playerAudioSource = default;
     public AudioSource PlayerAudioSource { get => playerAudioSource; }
-     [SerializeField] private AudioClip sonido = default;
-    public AudioClip sonidoIni { get => sonido; }
+     [SerializeField] private AudioClip sonido1 = default;
+    public AudioClip sonidoIni { get => sonido1; }
     public override void OnFocus()
     {
         print("Focus on " + gameObject.name);
@@ -18,9 +19,11 @@ public class InteractablePanel : Interactable
 
     public override void OnInteract(GameObject itemsContainer, ref List<HandItem> allPlayerObjects)
     {
-        PlayerAudioSource.PlayOneShot(sonido);
+        PlayerAudioSource.PlayOneShot(sonido1);
         luces.gameObject.SetActive(true);
         objetivo.gameObject.SetActive(true);
+        telefono.gameObject.SetActive(true);
+
     }
 
     public override void OnLoseFocus()
