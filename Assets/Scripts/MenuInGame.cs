@@ -53,6 +53,6 @@ public class MenuInGame : MonoBehaviour
 
     public void GoMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }
